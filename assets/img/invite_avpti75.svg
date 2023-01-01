@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="avpti" height="100%" viewBox="0 0 886 1280">
+  <defs>
+    <clipPath id="clip-invite_avpti75">
+      <rect width="886" height="1280"/>
+    </clipPath>
+  </defs>
+  <g id="invite_avpti75" clip-path="url(#clip-invite_avpti75)">
+    <rect width="886" height="1280" fill="#fff"/>
+    <image id="avpti_invite_blanck" width="886" height="1280" xlink:href="./assets/img/avpti_invite_blanck.jpeg"/>
+    <g id="place">
+      <text transform="matrix(0.998, -0.07, 0.07, 0.998, 450, 960.884)" fill="#050926" stroke="#fcc173" stroke-width="1" font-size="50" font-family="BlackChancery, Black Chancery" id="txtName">Full Name</text>
+      <text transform="matrix(0.998, -0.07, 0.07, 0.998, 550, 1000)" x="0" y="0" dominant-baseline="middle" text-anchor="middle" fill="#050926" font-size="35" font-family="BlackChancery, Black Chancery" id="txtDeg">Designation</text>
+    </g>
+  </g>
+</svg>

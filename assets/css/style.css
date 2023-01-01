@@ -1,0 +1,25 @@
+.container {
+    padding: 32px;
+}
+
+#tem {
+    width: auto;
+    margin: 0 auto;
+
+}
+
+#avpti {
+    border-radius: 8px;
+}
+
+#form {
+    margin-top: 32px;
+}
+
+#foot {
+    position: relative;
+    padding-bottom: 16px;
+    bottom: 8;
+    left: 0;
+    right: 0;
+}
