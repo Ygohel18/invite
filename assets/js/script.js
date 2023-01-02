@@ -2,7 +2,7 @@ window.onload = function (e) {
 
     console.log("I am coming, Are you?");
     var ajax = new XMLHttpRequest();
-    ajax.open("GET", "./assets/img/invite_avpti75_2.svg", true);
+    ajax.open("GET", "./assets/img/invite_avpti75_2.svg?v2", true);
 
     ajax.send();
     ajax.onload = function (e) {
@@ -13,7 +13,7 @@ window.onload = function (e) {
                 div.setAttribute("id", "tem");
                 div.innerHTML = ajax.responseText;
                 $("#placeholder").append(div);
-                $('#avpti_invite_blanck').attr('xlink:href', './assets/img/avpti_invite_blanck.png');
+                $('#avpti_invite_blanck').attr('xlink:href', './assets/img/avpti_invite_blanck.png?v2');
 
                 changePlaceholder();
 
