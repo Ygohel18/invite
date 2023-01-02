@@ -2,7 +2,7 @@ window.onload = function (e) {
 
     console.log("I am coming, Are you?");
     var ajax = new XMLHttpRequest();
-    ajax.open("GET", "./assets/img/invite_avpti75.svg", true);
+    ajax.open("GET", "./assets/img/invite_avpti75_2.svg", true);
 
     ajax.send();
     ajax.onload = function (e) {
@@ -13,7 +13,9 @@ window.onload = function (e) {
                 div.setAttribute("id", "tem");
                 div.innerHTML = ajax.responseText;
                 $("#placeholder").append(div);
-                $('#avpti_invite_blanck').attr('xlink:href', './assets/img/avpti_invite_blanck.jpeg');
+                $('#avpti_invite_blanck').attr('xlink:href', './assets/img/avpti_invite_blanck.png');
+
+                changePlaceholder();
 
                 // Update values on Invitation Card
                 $("#input-name").change(function () {
@@ -36,11 +38,15 @@ window.onload = function (e) {
 
                 // Export svg as png
                 $("#btn-dl").click(function () {
+                    setName($("#input-name").val());
+                    setDegination($("#input-deg").val());
                     var file = Math.floor(Date.now() / 1000) + ".png"
                     saveSvgAsPng(document.getElementById("avpti"), file);
                 });
 
                 $("#tem").click(function () {
+                    setName($("#input-name").val());
+                    setDegination($("#input-deg").val());
                     var file = Math.floor(Date.now() / 1000) + ".png"
                     saveSvgAsPng(document.getElementById("avpti"), file);
                 });
@@ -55,29 +61,45 @@ window.onload = function (e) {
 }
 
 function setName(name) {
-    if (name.length > 10) {
-        var pos = 450 - name.length * 5;
+    var ele = document.getElementById("txtName");
+    var box = document.getElementById("whitebox");
+    ele.textContent = name;
+    if (ele.getComputedTextLength() > box.getBBox().width) {
+        ele.setAttribute("x", "0");
     } else {
-        pos = 500;
+        ele.setAttribute("x", (box.getBBox().width - ele.getComputedTextLength()) / 2);
     }
-    var mat = "matrix(0.998, -0.07, 0.07, 0.998, " + pos + ", 960.884)";
-    document.getElementById("txtName").setAttribute("transform", mat);
-    document.getElementById("txtName").textContent = name;
 }
 
 function setDegination(degination) {
-    if (degination.length >= 11) {
-        var pos = 550 - degination.length * 5 + 90;
+    var ele = document.getElementById("txtDeg");
+    var box = document.getElementById("whitebox");
+    ele.textContent = degination;
+    if (ele.getComputedTextLength() > box.getBBox().width) {
+        ele.setAttribute("x", "0");
     } else {
-        pos = 550;
+        ele.setAttribute("x", (box.getBBox().width - ele.getComputedTextLength()) / 2);
     }
-    var mat = "matrix(0.998, -0.07, 0.07, 0.998, " + pos + ", 1000)";
-    document.getElementById("txtDeg").setAttribute("transform", mat);
-    document.getElementById("txtDeg").textContent = degination;
 }
 
 function getUrlParameter(k) {
     var p = {};
     location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (s, k, v) { p[k] = v })
     return k ? p[k] : p;
+}
+
+function changePlaceholder() {
+    $('#imgProfile').trigger('click');
+    $("#file-profile").change(function (ie) {
+        var file = $("input[type=file]").get(0).files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                // console.log($("#placeholder").attr("xlink:href"));
+                $("#imgProfile").attr("xlink:href", reader.result);
+
+            }
+            reader.readAsDataURL(file);
+        }
+    });
 }
