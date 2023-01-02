@@ -61,11 +61,20 @@ window.onload = function (e) {
 }
 
 function setName(name) {
+    var parent = document.getElementById("name");
     var ele = document.getElementById("txtName");
     var box = document.getElementById("whitebox");
     ele.textContent = name;
-    if (ele.getComputedTextLength() > box.getBBox().width) {
+    if (ele.getComputedTextLength() >= (box.getBBox().width)) {
         ele.setAttribute("x", "0");
+        parent.setAttribute("font-size", "40");
+        if(name.length > 20) {
+            parent.setAttribute("font-size", "35");
+        }
+        if(name.length >= 20) {
+            parent.setAttribute("font-size", "28");
+            ele.setAttribute("x", "-50");
+        }
     } else {
         ele.setAttribute("x", (box.getBBox().width - ele.getComputedTextLength()) / 2);
     }

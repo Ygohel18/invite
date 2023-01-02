@@ -13,12 +13,12 @@
   <g id="invite_avpti75_2" clip-path="url(#clip-invite_avpti75_2)">
     <rect width="886" height="1280" fill="#fff"/>
     <rect id="avpti_invite_blanck" width="886" height="1280" fill="url(#pattern)"/>
-    <g id="whitebox" transform="translate(483 936)" fill="#fff" stroke="#707070" stroke-width="1">
+    <g id="whitebox" transform="translate(483 936)" fill="none" stroke="none" stroke-width="1">
       <rect width="334" height="100" stroke="none"/>
       <rect x="0.5" y="0.5" width="333" height="99" fill="none"/>
     </g>
-    <text transform="translate(494 948)" fill="#050926" stroke="#fcc173" stroke-width="1" font-size="50" font-family="BlackChancery, Black Chancery"><tspan x="45.05" y="37" id="txtName">Full Name</tspan></text>
-    <text transform="translate(493.847 1000.172)" fill="#050926" font-size="25" font-family="BlackChancery, Black Chancery"><tspan x="97.687" y="19" id="txtDeg">Designation</tspan></text>
+    <text transform="translate(494 948)" fill="#fcc173" stroke="#fcc173" stroke-width="1" font-size="50" id="name" font-weight="bold" font-family="Roboto, Arial"><tspan x="45.05" y="37" id="txtName">Full Name</tspan></text>
+    <text transform="translate(493.847 1000.172)" fill="#fff" align="right" font-size="25" font-family="Roboto, arial" id="deg"><tspan x="97.687" y="19" id="txtDeg">Designation</tspan></text>
     <rect width="200" height="200" rx="32" transform="translate(551 700)" fill="url(#pattern-2)"/>
   </g>
 </svg>
